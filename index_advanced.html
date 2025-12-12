@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Advanced Landing — Example Site</title>
+
+  <!-- User-requested Google AdSense account meta -->
+  <meta name="google-adsense-account" content="ca-pub-2740291906282332">
+
+  <!-- SEO & Social -->
+  <meta name="description" content="A modern, accessible, responsive example site — advanced layout, performance hints, and semantic markup.">
+  <meta property="og:title" content="Advanced Landing — Example Site">
+  <meta property="og:description" content="A modern, accessible, responsive example site — advanced layout, performance hints, and semantic markup.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0b74de">
+
+  <!-- Structured data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Advanced Landing Example",
+    "url": "https://example.local/",
+    "description": "A modern, accessible, responsive example site demonstrating advanced HTML/CSS/JS patterns."
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#94a3b8; --accent:#0b74de; --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    html,body{height:100%; margin:0; background:linear-gradient(180deg,#071428 0%, #071b2a 100%); color:#e6f0ff;}
+    .container{max-width:1100px; margin:36px auto; padding:24px;}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;}
+    .brand{display:flex;align-items:center;gap:12px;}
+    .logo{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#4cc9f0);display:flex;align-items:center;justify-content:center;font-weight:700;color:#042a3b;}
+    nav a{color:var(--muted);text-decoration:none;margin-left:14px;font-weight:600}
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;margin-top:22px;align-items:center}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:22px;border-radius:var(--radius);box-shadow:0 6px 30px rgba(2,6,23,0.6);backdrop-filter: blur(6px);}
+    h1{margin:0 0 8px 0;font-size:28px;line-height:1.02}
+    p.lead{color:var(--muted);margin:0 0 18px 0}
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:20px}
+    .feature{padding:16px;border-radius:12px;background:var(--glass);border:1px solid rgba(255,255,255,0.02)}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:var(--accent);color:white;text-decoration:none;font-weight:700}
+    .small{font-size:13px;color:var(--muted)}
+    .meta-row{display:flex;gap:10px;align-items:center;margin-top:8px}
+    footer{margin-top:42px;color:var(--muted);font-size:13px;text-align:center;padding:32px 8px}
+    /* Responsive tweaks */
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr; padding-bottom:10px}
+      .brand .logo{width:44px;height:44px}
+    }
+
+    /* FAQ accordion */
+    .faq-item{margin-bottom:12px}
+    .faq-item summary{cursor:pointer;padding:12px;border-radius:10px;background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent);list-style:none}
+    details[open] summary{box-shadow:inset 0 -2px 0 rgba(255,255,255,0.03)}
+  </style>
+</head>
+<body>
+  <div class="container" role="document">
+    <header>
+      <div class="brand" aria-label="Site brand">
+        <div class="logo" aria-hidden="true">AL</div>
+        <div>
+          <div style="font-weight:800">Advanced Landing</div>
+          <div class="small">Modern template • Accessible • Performance-minded</div>
+        </div>
+      </div>
+      <nav aria-label="Primary">
+        <a href="#features">Features</a>
+        <a href="#blog">Blog</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact" class="btn" style="margin-left:12px">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="card" role="region" aria-labelledby="hero-title">
+          <h1 id="hero-title">A faster, more accessible site — built for scale</h1>
+          <p class="lead">This example demonstrates semantic markup, responsive layout, a11y considerations, JSON‑LD, and lightweight JS patterns suitable for modern projects. Includes your requested Google AdSense meta tag in the <code>&lt;head&gt;</code>.</p>
+          <div class="meta-row">
+            <a class="btn" href="#features">See features</a>
+            <a class="small" href="#blog" style="margin-left:8px">Read latest posts</a>
+          </div>
+
+          <div style="margin-top:18px" aria-hidden="true">
+            <div class="grid-3" style="margin-top:10px">
+              <div class="feature"><strong>Performance</strong><div class="small">Lazy loading, minimal JS, careful paint order.</div></div>
+              <div class="feature"><strong>Accessibility</strong><div class="small">Semantic elements, ARIA roles, keyboard interactions.</div></div>
+              <div class="feature"><strong>SEO</strong><div class="small">Structured data, meta tags, clean headings.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="card" aria-label="Quick stats">
+          <h3 style="margin-top:0">Quick stats</h3>
+          <dl>
+            <div><dt class="small">Pages</dt><dd>12+ sample layouts</dd></div>
+            <div><dt class="small">Load</dt><dd>~50–200 KB critical CSS</dd></div>
+            <div><dt class="small">A11y</dt><dd>Contrast & keyboard-friendly</dd></div>
+          </dl>
+          <div style="margin-top:12px"><a class="small" href="#contact">Request a copy</a></div>
+        </aside>
+      </section>
+
+      <section id="features" class="card" aria-labelledby="features-title" style="margin-top:20px">
+        <h2 id="features-title">Features — advanced by design</h2>
+        <p class="small">A curated list of practical, modern features implemented in plain HTML/CSS/JS.</p>
+
+        <div class="features" role="list">
+          <div class="feature" role="listitem">
+            <h4>Semantic structure</h4>
+            <p class="small">Headings, landmarks, and properly nested content to improve crawling and screen-reader experience.</p>
+          </div>
+          <div class="feature" role="listitem">
+            <h4>Lazy images & responsive assets</h4>
+            <p class="small">Images use <code>loading="lazy"</code> and responsive <code>srcset</code> patterns to save bandwidth.</p>
+          </div>
+          <div class="feature" role="listitem">
+            <h4>Minimal, focused JavaScript</h4>
+            <p class="small">Only a small interactive layer for accordions and form validation; scripts are deferred for faster paint.</p>
+          </div>
+          <div class="feature" role="listitem">
+            <h4>Privacy-conscious</h4>
+            <p class="small">No third-party trackers by default; add analytics or ads explicitly where required.</p>
+          </div>
+          <div class="feature" role="listitem">
+            <h4>Progressive enhancement</h4>
+            <p class="small">Works as static HTML; JS enhances the experience for capable browsers.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="blog" class="card" aria-labelledby="blog-title" style="margin-top:20px">
+        <h2 id="blog-title">Latest posts</h2>
+        <article aria-labelledby="post1">
+          <h3 id="post1">Optimizing First Paint for Real Users</h3>
+          <p class="small">Short summary: how to prioritize critical resources, inline only essential CSS, and defer the rest.</p>
+        </article>
+
+        <article aria-labelledby="post2" style="margin-top:12px">
+          <h3 id="post2">Small, focused JS — the new luxury</h3>
+          <p class="small">Why shipping less JS improves accessibility, reliability, and user trust.</p>
+        </article>
+      </section>
+
+      <section id="faq" class="card" aria-labelledby="faq-title" style="margin-top:20px">
+        <h2 id="faq-title">FAQ</h2>
+
+        <div class="faq-item">
+          <details>
+            <summary>How do I include AdSense on my site?</summary>
+            <div class="small" style="padding:10px 0">This template already includes your requested AdSense meta tag. To show ads you will also need to add AdSense script tags and ad placements — follow Google's official setup flow and policy. Don't forget to verify your site in your AdSense dashboard.</div>
+          </details>
+        </div>
+
+        <div class="faq-item">
+          <details>
+            <summary>Is this accessible?</summary>
+            <div class="small" style="padding:10px 0">Yes — semantic HTML, well-ordered headings, keyboard-friendly controls, and visible focus states are included. Use an automated a11y checker and manual testing for full compliance.</div>
+          </details>
+        </div>
+      </section>
+
+      <section id="contact" class="card" aria-labelledby="contact-title" style="margin-top:20px">
+        <h2 id="contact-title">Contact / Request</h2>
+        <p class="small">This is a demo contact form — it's non-functional without a backend. Replace the action with your endpoint or wire-up a serverless function.</p>
+        <form aria-label="Contact form" onsubmit="event.preventDefault(); alert('Demo only — form not submitted.');">
+          <label class="small">Name <br><input required placeholder="Your name" style="width:100%;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit"></label>
+          <label class="small" style="display:block;margin-top:8px">Email <br><input required type="email" placeholder="you@example.com" style="width:100%;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit"></label>
+          <label class="small" style="display:block;margin-top:8px">Message <br><textarea required placeholder="Brief message" style="width:100%;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit"></textarea></label>
+          <div style="margin-top:10px"><button class="btn" type="submit">Send (demo)</button></div>
+        </form>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="small">Made with care • Accessible & performance-minded template • &copy; 2025 Advanced Landing</div>
+      <div class="small" style="margin-top:6px">Head contains: <code>&lt;meta name="google-adsense-account" content="ca-pub-2740291906282332"&gt;</code></div>
+    </footer>
+  </div>
+
+  <script>
+    // Small JavaScript enhancements — progressive enhancement only
+    (function(){
+      // Basic keyboard focus styling fallback for browsers without :focus-visible
+      try{
+        document.querySelector('body').addEventListener('keydown', function(){ document.documentElement.classList.add('kbd'); }, {once:true});
+      }catch(e){}
+
+      // Lightweight lazy-image polyfill for older browsers (images in this demo are placeholders)
+      document.addEventListener('DOMContentLoaded', function(){
+        var imgs = document.querySelectorAll('img[loading="lazy"]');
+        if('IntersectionObserver' in window){
+          var io = new IntersectionObserver(function(entries){
+            entries.forEach(function(e){
+              if(e.isIntersecting){
+                var img = e.target;
+                img.src = img.dataset.src || img.src;
+                io.unobserve(img);
+              }
+            });
+          });
+          imgs.forEach(function(i){ io.observe(i); });
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
